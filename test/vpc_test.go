@@ -24,7 +24,13 @@ func TestTerraformAwsEksVPC(t *testing.T) {
 	})
 
 	test_structure.RunTestStage(t, "deploy_terraform", func() {
-		deployTerraform(t, workingDir, map[string]interface{}{})
+		uniqueId := random.UniqueId()
+		vpcName := fmt.Sprintf("plinth-vpc-testing-%s", uniqueId)
+		vpcCidr := aws.GetRandomPrivateCidrBlock(18)
+		deployTerraform(t, workingDir, map[string]interface{}{
+			"vpc_name":   vpcName,
+			"cidr_block": vpcCidr,
+		})
 	})
 
 	test_structure.RunTestStage(t, "validate_vpc", func() {
