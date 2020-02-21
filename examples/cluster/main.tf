@@ -16,6 +16,10 @@ module "eks" {
   node_labels = {
     "danieltefera08.com/plinth-test-environment" = var.cluster_name
   }
+
+  node_taints = {
+    "plinth" = "test:PreferNoSchedule"
+  }
 }
 
 data "aws_eks_cluster_auth" "cluster" {
