@@ -151,7 +151,7 @@ func WaitUntilPodSucceededE(t *testing.T, options *k8s.KubectlOptions, podName s
 
 func validateNodeLabels(t *testing.T, kubeconfig string, clusterName string) {
 	kubectlOptions := k8s.NewKubectlOptions("", kubeconfig, "default")
-	nodes, err := k8s.GetNodesByFilterE(t, kubectlOptions, metav1.ListOptions{LabelSelector: "node-role.k8s.danieltefera08.com/spot-worker=true"})
+	nodes, err := k8s.GetNodesByFilterE(t, kubectlOptions, metav1.ListOptions{LabelSelector: "node-group.k8s.danieltefera08.com/name=standard-nodes"})
 	require.NoError(t, err)
 	for _, node := range nodes {
 		assert.Equal(t, clusterName, node.Labels["danieltefera08.com/plinth-test-environment"])

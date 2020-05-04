@@ -28,6 +28,8 @@ module "node_group" {
 
   cluster_config = module.cluster.config
 
+  name = "standard-nodes"
+
   labels = {
     "danieltefera08.com/plinth-test-environment" = var.cluster_name
   }
