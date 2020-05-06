@@ -21,6 +21,10 @@ module "cluster" {
       groups   = ["system:masters"]
     }
   ]
+
+  tags = {
+    Project = "plinth"
+  }
 }
 
 module "node_group" {
