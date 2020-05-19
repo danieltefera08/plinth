@@ -15,3 +15,19 @@ wget https://raw.githubusercontent.com/danieltefera08/plinth/master/hack/update_
 chmod +x update_1_15.sh
 ./update_1_15 example-cluster-module
 ```
+
+## 1.15 -> 1.16
+
+Metrics Server and Prometheus Node Exporter will not be managed by this module
+by default.
+
+To retain the previous behaviour set:
+
+```
+  metrics_server              = true
+  prometheus_node_exporter    = true
+```
+
+📝 existing resources won't be removed by this update, you will need to remove
+them manually if they are no longer required. This change means that they will not
+be created in a new cluster, or receive updates from this module!
