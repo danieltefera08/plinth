@@ -31,7 +31,7 @@ module "eks" {
 For more advanced uses, we recommend that you construct and configure
 your clusters using the submodules.
 
-[see example](https://github.com/danieltefera08/plinth/blob/master/examples/cluster/main.tf)
+[see example](https://github.com/danieltefera08/plinth/blob/main/examples/cluster/main.tf)
 
 This allows for much more flexibility, in order to for example:
 
@@ -65,7 +65,7 @@ provider "aws" {
 }
 ```
 
-[see an example role here](https://github.com/danieltefera08/plinth/blob/master/examples/iam_permissions/main.tf)
+[see an example role here](https://github.com/danieltefera08/plinth/blob/main/examples/iam_permissions/main.tf)
 
 Without this you may encounter difficulties applying kubernetes manifests to
 the cluster.
