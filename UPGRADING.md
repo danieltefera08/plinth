@@ -62,7 +62,7 @@ and nodes. To continue to use these (and avoid recreating the cluster) set
 Update terraform state:
 
 ```shell
-wget https://raw.githubusercontent.com/danieltefera08/plinth/master/hack/update_1_15.sh
+wget https://raw.githubusercontent.com/danieltefera08/plinth/main/hack/update_1_15.sh
 chmod +x update_1_15.sh
 ./update_1_15.sh example-cluster-module
 ```
