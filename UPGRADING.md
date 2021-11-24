@@ -7,6 +7,7 @@
 
 ## 1.19 -> 1.20
 [247](https://github.com/danieltefera08/plinth/pull/247) 💥 Breaking Change. The `k8s_version` variable has been removed. Use the correct version of the module for the k8s version you want to use.
+[156](https://github.com/danieltefera08/plinth/issues/156) 💥 Breaking Change. The root module has been removed. Please refactor using the README as a guide.
 
 ## 1.18 -> 1.19
 
