@@ -10,6 +10,7 @@
  * [156](https://github.com/danieltefera08/plinth/issues/156) 💥 Breaking Change. The root module has been removed. Please refactor using the README as a guide.
  * [276](https://github.com/danieltefera08/plinth/pull/276) 💥 Breaking Change. The `dns_cluster_ip` variable has been removed from the `asg_node_group` module.
  * [240](https://github.com/danieltefera08/plinth/pull/240/) 💥 Breaking Change. Public access to EKS Clusters is disabled by default.
+ * [261](https://github.com/danieltefera08/plinth/pull/261/) 💥 Breaking Change. Node module requires terraform version >=0.14, upgrade your terraform version if using <= 0.13.
 
 ## 1.18 -> 1.19
 
