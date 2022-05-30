@@ -21,6 +21,8 @@ module "node_group" {
   key_name     = "development"
   bottlerocket = true
 
+  imdsv2_enabled = true
+
   labels = {
     "danieltefera08.com/plinth-test-environment" = data.terraform_remote_state.cluster.outputs.cluster_name
   }
