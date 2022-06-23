@@ -20,8 +20,6 @@ module "node_group" {
   name     = "standard-nodes"
   key_name = "development"
 
-  imdsv2_required = true
-
   labels = {
     "danieltefera08.com/plinth-test-environment" = data.terraform_remote_state.cluster.outputs.cluster_name
   }
