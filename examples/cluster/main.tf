@@ -34,12 +34,27 @@ module "cluster" {
       username = aws_iam_role.test_role.name
       rolearn  = aws_iam_role.test_role.arn
       groups   = ["system:masters"]
-    }
+    },
+    {
+      username = "system:node:{{EC2PrivateDNSName}}"
+      rolearn  = module.karpenter.node_role_arn
+      groups = [
+        "system:bootstrappers",
+        "system:nodes",
+      ]
+    },
   ]
 
   tags = {
     Project = "plinth"
   }
+}
+
+module "karpenter" {
+  source = "../../modules/karpenter"
+
+  cluster_config = module.cluster.config
+  oidc_config    = module.cluster.oidc_config
 }
 
 data "aws_security_group" "nodes" {
