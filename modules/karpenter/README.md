@@ -26,7 +26,9 @@ so they can connect to the cluster.
 
 ```hcl
 module "cluster" {
-  source  = "danieltefera08/eks/aws"
+  source     = "danieltefera08/eks/aws"
+  name       = "hal-9000"
+  vpc_config = module.vpc.config
 
   aws_auth_role_map = [
     {
